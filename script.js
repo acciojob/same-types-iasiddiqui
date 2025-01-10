@@ -3,10 +3,17 @@ function isSameType(value1, value2) {
   const numValue1 = isNaN(value1) ? value1 : Number(value1);
   const numValue2 = isNaN(value2) ? value2 : Number(value2);
 
+  // Check if only one value is NaN
+  if (isNaN(numValue1) !== isNaN(numValue2)) {
+    return false;
+  }
+
+  // Check if both values are NaN
   if (isNaN(numValue1) && isNaN(numValue2)) {
     return true;
   }
 
+  // Check if types of both values are the same
   return typeof numValue1 === typeof numValue2;
 }
 
