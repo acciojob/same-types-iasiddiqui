@@ -1,5 +1,13 @@
 function isSameType(value1, value2) {
-  //your js code here
+  // Convert strings that can be numbers to actual numbers
+  const numValue1 = isNaN(value1) ? value1 : Number(value1);
+  const numValue2 = isNaN(value2) ? value2 : Number(value2);
+
+  if (isNaN(numValue1) && isNaN(numValue2)) {
+    return true;
+  }
+
+  return typeof numValue1 === typeof numValue2;
 }
 
 // do not change the code below.
